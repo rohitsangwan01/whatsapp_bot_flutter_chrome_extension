@@ -21131,11 +21131,12 @@ async function onMessage(data) {
       });
       sendMessage(id, "subscribed", null, false);
     } else {
-      const code = `(async function() {
-        const result = await ${codeText};
-        return result;
-      })()`;
-      let result = await eval(code);
+      // const code = `(async function() {
+      //   const result = await ${codeText};
+      //   return result;
+      // })()`;
+      // let result = await eval(code);
+      let result = await eval(codeText);
       console.log(result);
       sendMessage(id, result, null, false);
     }
